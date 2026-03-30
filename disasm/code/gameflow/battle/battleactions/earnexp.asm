@@ -65,8 +65,7 @@ battlesceneScript_CalculateDamageExp:
                 tst.w   d1
                 beq.w   @Skip           ; skip function to prevent division by zero error
                 bsr.w   battlesceneScript_GetKillExp
-                mulu.w  d6,d5
-                divu.w  d1,d5
+                move.w  #PER_ACTION_EXP_CAP,d5
                 bsr.w   battlesceneScript_AddExpAndApplyPerActionCap
 @Skip:
                 
@@ -184,22 +183,22 @@ battlesceneScript_GetKillExp:
 @Continue:
                 
                 sub.w   d2,d1
-                moveq   #50,d5          ; HARDCODED EXP amounts
+                moveq   #PER_ACTION_EXP_CAP,d5 ; HARDCODED EXP amounts
                 cmpi.b  #3,d1
                 bmi.w   @Done
-                moveq   #40,d5
+                moveq   #PER_ACTION_EXP_CAP,d5
                 cmpi.b  #3,d1
                 beq.w   @Done
-                moveq   #30,d5
+                moveq   #PER_ACTION_EXP_CAP,d5
                 cmpi.b  #4,d1
                 beq.w   @Done
-                moveq   #20,d5
+                moveq   #PER_ACTION_EXP_CAP,d5
                 cmpi.b  #5,d1
                 beq.w   @Done
-                moveq   #10,d5
+                moveq   #PER_ACTION_EXP_CAP,d5
                 cmpi.b  #6,d1
                 beq.w   @Done
-                moveq   #0,d5
+                moveq   #PER_ACTION_EXP_CAP,d5
 @Done:
                 
                 movem.l (sp)+,d0-d3/a0

@@ -2088,11 +2088,11 @@ SPELLELEMENTS_NUMBER: equ elementNumber
 ; ---------------------------------------------------------------------------
 
 ; enum BattleActionEngine_ExpValues
-STATUSEFFECT_SPELL_EXP: equ 5 ; 5 exp per target
-HEALING_SPELL_EXP_MIN: equ 10
+STATUSEFFECT_SPELL_EXP: equ 10 ; 10 exp per target
+HEALING_SPELL_EXP_MIN: equ 20
 HEALING_SPELL_EXP_MAX: equ 25
-HEALING_ACTION_EXP_CAP: equ 25
-PER_ACTION_EXP_CAP: equ 49
+HEALING_ACTION_EXP_CAP: equ 50
+PER_ACTION_EXP_CAP: equ 50
 
 ; ---------------------------------------------------------------------------
 
